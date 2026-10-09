@@ -2,11 +2,12 @@ import csv
 data=[]
 
 open ("input_asteroid_data.csv", "r") as file:
-open ("output_asteroid_data.csv", "r")
-reader=csv.DictReader.fie
+#open ("output_asteroid_data.csv", "w") as file:
+reader=csv.DictReader.file
+with open("output_asteroid_data.csv", "w", fieldnames=headings) as output_file:
+    for row in reader:
 
-    for line in reader:
-        ore=
+        feidnamesore=
         crystal=
         gas=
 
