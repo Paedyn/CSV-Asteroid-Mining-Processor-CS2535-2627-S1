@@ -1,5 +1,5 @@
 import csv
-data=[]
+
 
 with open("input_asteroid_data.csv", "r") as file:
     reader = csv.DictReader(file)
@@ -15,6 +15,7 @@ with open("input_asteroid_data.csv", "r") as file:
             "total_units",
             "cargo_value"
         ]
+        writer.writerow(fieldnames)
 
         for row in reader:
             asteroid_id = row["asteroid_id"]
@@ -24,11 +25,13 @@ with open("input_asteroid_data.csv", "r") as file:
 
             total_units = ore + crystal + gas
             cargo_value = (ore * 2) + (crystal * 5) + (gas * 3)
+
             writer.writerow([
                 asteroid_id,
                 ore,
                 crystal,
                 gas,
+                total_units,
                 cargo_value
             ])
 print()
